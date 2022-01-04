@@ -1,0 +1,166 @@
+* {
+    box-sizing: border-box;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
+}
+
+body {
+    margin: 0px;
+}
+
+main, .container, .image {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+}
+
+.container {
+    margin-top: 10px;
+    height: 500px;
+    width:500px
+}
+
+.image {
+    width: 450px;
+    height: 600px;
+}
+
+
+img {
+    height: 100%;
+    width: 100%;
+    object-fit: contain;
+    }
+
+.puzzle {
+    border: 2px solid white;
+    position: absolute;
+    height: 530px;
+    width: 450px;
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+} 
+
+.square {
+height: 48px;
+width: 49.1px;
+flex-grow: 1;
+cursor: pointer;
+background-color: white;
+}
+
+
+.hide {
+    background-color: unset;
+}
+
+.none {
+    display: none;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+input {
+    height:40px;
+    font-size: 20px;
+    border-radius: 5px;
+}
+
+.answer {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.answerButton {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+    margin-top: 10px;
+    width: 80px;
+    height: 30px;
+    cursor: pointer;
+    background-color: wheat;
+}
+
+.answerButton:hover {
+    background-color: rgb(204, 186, 151);
+}
+
+.clickAmount {
+    margin-top: 10px;
+}
+
+.end {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 500px;
+    height: 600px;
+    background-color: rgb(218, 54, 54);
+    font-size: 80px;
+}
+
+.again {
+    cursor: pointer;
+    margin-top: 100px;
+    width: 150px;
+    height: 50px;
+    font-size: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    border-radius: 10px;
+}
+
+.pointerEvent {
+    pointer-events: none;
+}
+
+h1 {
+    font-size: 60px;
+}
+
+
+@media screen and (max-width: 500px) {
+
+h1{
+    font-size: 50px;
+    margin-bottom: 0px;
+}
+
+.end {
+    width: 100%;
+    height: 100%;
+}
+
+.image {
+    width: 300px;
+    height: 380px;
+}
+
+.puzzle {
+    border: 1px solid white;
+    height: 370px;
+    width: 300px;
+} 
+
+.square {
+    height: 34px;
+    width: 30px;
+    flex-grow: 1;
+}
+
+
+}
