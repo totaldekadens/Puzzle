@@ -151,6 +151,7 @@ h3 {
 .container {
     height: auto;
     width: 100%;
+    margin-top: 25px;
 }    
 
 h1{
@@ -188,6 +189,9 @@ form {
 
 @media screen and (max-width: 350px) {
 
+.container {
+    margin-top: 12px;
+}    
 .image {
     width: 250px;
     height: 300px
@@ -205,6 +209,7 @@ form {
 
 h1 {
     font-size: 45px;
+    margin-top: 10px;
 }
 
 }
