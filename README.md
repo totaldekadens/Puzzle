@@ -1,6 +1,5 @@
-# Categories---Different-colors
-Categories - Different colors
+# Puzzle
 
 PRACTICE
 
-Link: https://totaldekadens.github.io/Categories---Different-colors/
+Link: https://totaldekadens.github.io/Puzzle/
