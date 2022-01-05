@@ -24,7 +24,7 @@ function addContent() {
   main.append(clickAmount)
   main.appendChild(tell)
 
-  tell.innerText = "You have "+ trial +" attempts left"
+  tell.innerText = "You have "+ trial +" attempt(s) left"
 
 
   for(let i = 1 ; i < 100; i++){
@@ -70,7 +70,7 @@ function addToBate() {
 
   let clickbate = sessionStorage.getItem('click'); 
   
-  clickAmount.innerText = "You have " + clickbate + " clicks left"
+  clickAmount.innerText = "You have " + clickbate + " click(s) left"
   
 }
 
@@ -93,7 +93,7 @@ answerButton.addEventListener("click", ()=> {
 
     trial = trial - 1
 
-    tell.innerText = "You have "+ trial +" attempts left"
+    tell.innerText = "You have "+ trial +" attempt(s) left"
 
     alert("WROOONG!")
 
