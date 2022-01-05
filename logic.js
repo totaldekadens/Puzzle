@@ -8,6 +8,8 @@ let trial = 2
 
 sessionStorage.setItem('click', click);
 
+
+
 function onLoad(){
   addContent();
   celebrity();
@@ -18,8 +20,6 @@ function onLoad(){
 
 function addContent() {
 
-  let clickbate = sessionStorage.getItem('click'); 
-
   clickAmount.classList.add("clickAmount")
   main.append(clickAmount)
   main.appendChild(tell)
@@ -29,11 +29,11 @@ function addContent() {
 
   for(let i = 1 ; i < 100; i++){
 
-    let pusselbit = "bit"+i 
+    let bit = "bit"+i 
 
     let square = document.createElement("div")
     square.classList.add("square")
-    square.classList.add("bit"+i )
+    square.classList.add(bit)
     puzzle.appendChild(square)
 
     let hejsan = document.querySelector(".bit"+i)
@@ -54,19 +54,15 @@ function addContent() {
           puzzle.classList.add("pointerEvent")
 
         }
-
-        addToBate();
+        amountOfClicks();
       }
-
     })
-
   }
-
 }
 
 
 
-function addToBate() {
+function amountOfClicks() {
 
   let clickbate = sessionStorage.getItem('click'); 
   
@@ -78,44 +74,41 @@ function addToBate() {
 
 function celebrity() {
 
-const answerButton = document.querySelector(".answerButton")
-answerButton.addEventListener("click", ()=> {
+  const answerButton = document.querySelector(".answerButton")
+  answerButton.addEventListener("click", ()=> {
 
-  let result = document.getElementsByTagName("input")[0].value
+    let result = document.getElementsByTagName("input")[0].value
 
-  if(result == "Lopez" || result == "Jennifer Lopez" || result == "JLo" || result == "jlo" || result == "JLO") {
+    if(result == "Lopez" || result == "Jennifer Lopez" || result == "JLo" || result == "jlo" || result == "JLO") {
 
-    puzzle.classList.add("none")
+      puzzle.classList.add("none")
 
-    alert("Congratulations!")
+      alert("Congratulations!")
 
-  } else {
+    } else {
 
-    trial = trial - 1
+      trial = trial - 1
 
-    tell.innerText = "You have "+ trial +" attempt(s) left"
+      tell.innerText = "You have "+ trial +" attempt(s) left"
 
-    alert("WROOONG!")
+      alert("WROOONG!")
 
-    if(trial == 0) {
+      if(trial == 0) {
 
-      let end = document.createElement("div")
-      end.classList.add("end")
-      end.innerText = "THE END"
-      main.appendChild(end)
+        let end = document.createElement("div")
+        end.classList.add("end")
+        end.innerText = "THE END"
+        main.appendChild(end)
 
-      let again = document.createElement("div")
-      again.classList.add("again")
-      again.innerText = "Start over"
-      again.addEventListener("click", reload)
-      end.appendChild(again)
+        let again = document.createElement("div")
+        again.classList.add("again")
+        again.innerText = "Start over"
+        again.addEventListener("click", reload)
+        end.appendChild(again)
 
+      }
     }
-  }
-
-
-})
-
+  })
 }
 
 
