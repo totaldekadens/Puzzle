@@ -1,6 +1,7 @@
 * {
     box-sizing: border-box;
-    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: rgba(0, 0, 0, 0.63)
 }
 
 body {
@@ -44,11 +45,12 @@ img {
 } 
 
 .square {
-height: 48px;
-width: 49.1px;
-flex-grow: 1;
-cursor: pointer;
-background-color: white;
+    height: 48px;
+    width: 49.1px;
+    flex-grow: 1;
+    cursor: pointer;
+    background-color: white;
+    border: 1px solid rgb(233, 233, 233);
 }
 
 
@@ -62,8 +64,8 @@ background-color: white;
 
 form {
     display: flex;
-    flex-direction: column;
     align-items: center;
+    margin-top: 20px;
 }
 
 input {
@@ -84,11 +86,13 @@ input {
     justify-content: center;
     align-items: center;
     border-radius: 5px;
-    margin-top: 10px;
-    width: 80px;
-    height: 30px;
+    margin-left: 10px;
+    width: 100px;
+    height: 40px;
+    font-size: 18px;
+    font-weight: bold;
     cursor: pointer;
-    background-color: wheat;
+    background-color: rgb(107, 193, 214);
 }
 
 .answerButton:hover {
@@ -105,8 +109,8 @@ input {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: 500px;
-    height: 600px;
+    width: 100%;
+    height: 100%;
     background-color: rgb(218, 54, 54);
     font-size: 80px;
 }
@@ -114,14 +118,19 @@ input {
 .again {
     cursor: pointer;
     margin-top: 100px;
-    width: 150px;
-    height: 50px;
-    font-size: 30px;
+    width: 100%;
+    height: 70px;
+    font-size: 40px;
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: white;
+    background-color: rgb(0, 0, 0);
+    color: white;
     border-radius: 10px;
+}
+
+.again:hover {
+background-color: rgb(37, 37, 37);
 }
 
 .pointerEvent {
@@ -130,48 +139,72 @@ input {
 
 h1 {
     font-size: 60px;
-    margin-bottom: 0px;
+}
+
+h3 {
+    margin-top: 10px;
 }
 
 
 @media screen and (max-width: 500px) {
 
 .container {
-    height:400px;
+    height: auto;
     width: 100%;
-}
+}    
 
 h1{
     font-size: 50px;
     margin-bottom: 0px;
+    margin-top: 20px;
 }
 
-.end {
-    width: 100%;
-    height: 100%;
-    font-size: 60px;
+form {
+    flex-direction: column;
+    margin-top: 5px;
 }
 
-.again {
-    font-size: 20px;
+.answerButton {
+    margin-top: 10px;
 }
 
 .image {
-    width: 300px;
-    height: 380px;
+    width: 290px;
+    height: 340px;
 }
 
 .puzzle {
     border: 1px solid white;
-    height: 370px;
+    height: 340px;
     width: 300px;
 } 
 
 .square {
-    height: 34px;
+    height: 31px;
     width: 30px;
-    flex-grow: 1;
 }
 
+}
+
+@media screen and (max-width: 350px) {
+
+.image {
+    width: 250px;
+    height: 300px
+}
+
+.puzzle {
+    width: 250px;
+    height: 300px;
+}
+
+.square {
+    height: 27.1px;
+    width: 26px; 
+}
+
+h1 {
+    font-size: 45px;
+}
 
 }

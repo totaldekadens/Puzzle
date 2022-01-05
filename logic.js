@@ -22,7 +22,7 @@ function addContent() {
 
   clickAmount.classList.add("clickAmount")
   main.append(clickAmount)
-  form.appendChild(tell)
+  main.appendChild(tell)
 
   tell.innerText = "You have "+ trial +" attempts left"
 
