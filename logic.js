@@ -13,9 +13,6 @@ let click = 7
 let trial = 2 
 let y = 0
 
-/* localStorage.setItem('celebId', y); */
-
-
 sessionStorage.setItem('click', click);
 
 let listOfCeleb = [
@@ -53,6 +50,10 @@ function onLoad(){
 
 
 function addContent() {
+
+  if(!y) {
+    y = 0
+  }
 
   var y = localStorage.getItem('celebId')
   console.log(y)
