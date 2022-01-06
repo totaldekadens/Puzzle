@@ -57,7 +57,6 @@ function addContent() {
     y = 0
   }
 
-  console.log(y)
 
   picture.src = "./assets/" + listOfCeleb[y].image
   image.appendChild(picture)
@@ -125,7 +124,6 @@ function amountOfClicks() {
 }
 
 function ifCeleb() {
-  console.log("Kom in i ifCeleb")
 
   answerButton.addEventListener("click", ()=> {
 
@@ -136,8 +134,6 @@ function ifCeleb() {
     }
   
     let result = document.getElementsByTagName("input")[0].value
-
-    console.log(result)
 
     if(result == listOfCeleb[id].fullName || result == listOfCeleb[id].alt2 || result == listOfCeleb[id].alt3) {
 
@@ -182,8 +178,6 @@ function ifCeleb() {
 
 
     } else {
-
-      console.log("Kom in i ELSE")
 
       trial = trial - 1
 

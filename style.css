@@ -103,7 +103,8 @@ form {
 
 input {
     height:40px;
-    font-size: 20px;
+    width: 228px;
+    font-size: 18px;
     border-radius: 5px;
 }
 
