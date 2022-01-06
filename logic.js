@@ -51,11 +51,12 @@ function onLoad(){
 
 function addContent() {
 
+  var y = localStorage.getItem('celebId')
+
   if(!y) {
     y = 0
   }
-
-  var y = localStorage.getItem('celebId')
+  
   console.log(y)
 
   picture.src = "./assets/" + listOfCeleb[y].image
