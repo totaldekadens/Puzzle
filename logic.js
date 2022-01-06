@@ -11,7 +11,7 @@ let picture = document.createElement("img")
 let next = document.createElement("div")
 let click = 7
 let trial = 2 
-let y = 0
+let y
 
 sessionStorage.setItem('click', click);
 
@@ -56,7 +56,7 @@ function addContent() {
   if(!y) {
     y = 0
   }
-  
+
   console.log(y)
 
   picture.src = "./assets/" + listOfCeleb[y].image
@@ -130,6 +130,10 @@ function ifCeleb() {
   answerButton.addEventListener("click", ()=> {
 
     var id = localStorage.getItem('celebId')
+
+    if(!id) {
+      id = 0
+    }
   
     let result = document.getElementsByTagName("input")[0].value
 
