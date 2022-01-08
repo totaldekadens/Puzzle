@@ -9,7 +9,7 @@ let clickAmount = document.createElement("div")
 let tell = document.createElement("h3")
 let picture = document.createElement("img")
 let next = document.createElement("div")
-let click = 7
+let click = 9
 let trial = 2 
 let y
 
