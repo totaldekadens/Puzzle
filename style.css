@@ -8,7 +8,7 @@ body {
     margin: 0px;
 }
 
-main, .container, .image {
+main, .container, .image, .end {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -16,9 +16,15 @@ main, .container, .image {
     align-items: center;
 }
 
+.next, .restart, .correct, .wrong, .answer, .answerButton, .again {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    }
+
 .container {
     margin-top: 10px;
-    height: 500px;
+    max-height: 600px;
     width:500px
 }
 
@@ -35,13 +41,13 @@ img {
     }
 
 .puzzle {
-    border: 2px solid white;
+    display: flex;
     position: absolute;
+    justify-content: space-evenly;
     height: 530px;
     width: 450px;
-    display: flex;
-    justify-content: space-evenly;
     flex-wrap: wrap;
+    border: 2px solid white;
 } 
 
 .square {
@@ -55,9 +61,6 @@ img {
 
 .answer {
     margin-top: 20px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
 }
 
 .next {
@@ -66,9 +69,6 @@ img {
     height: 150px;
     background-color: rgb(107, 193, 214);
     cursor: pointer;
-    display: flex;
-    justify-content: center;
-    align-items: center;
     font-size: 50px;
     border-radius: 10px;
 }
@@ -79,13 +79,55 @@ img {
     height: 50px;
     background-color: rgb(107, 193, 214);
     cursor: pointer;
-    display: flex;
-    justify-content: center;
-    align-items: center;
     font-size: 20px;
     border-radius: 10px;
 }
 
+.correct, .wrong {
+    position: absolute;
+    width: 300px;
+    height: 150px;
+    border-radius: 70px;
+    color: white;
+    font-size: 50px;
+    animation: fadein 2s;
+    -webkit-animation: fadein 2s;
+    -moz-animation: fadein 2s;
+    -o-animation: fadein 2s;
+    -ms-animation: fadein 2s;
+}
+.correct {
+    background-color: rgb(252, 121, 197);
+}
+
+.wrong {
+    background-color: red;
+}
+
+@keyframes fadein {
+    0%, 100% {opacity:0;}
+    100% {opacity:1;}
+}
+
+@-moz-keyframes fadein {
+    0%, 100% {opacity:0;}
+    100% {opacity:1;}
+}
+
+@-webkit-keyframes fadein {
+    0%, 100% {opacity:0;}
+    100% {opacity:1;}
+}
+
+@-o-keyframes fadein {
+    0%, 100% {opacity:0;}
+    100% {opacity:1;}
+}
+
+@-ms-keyframes fadein {
+    0%, 100% {opacity:0;}
+    100% {opacity:1;}
+}
 
 .hide {
     background-color: unset;
@@ -93,6 +135,7 @@ img {
 
 .none {
     display: none;
+
 }
 
 form {
@@ -108,12 +151,7 @@ input {
     border-radius: 5px;
 }
 
-
-
 .answerButton {
-    display: flex;
-    justify-content: center;
-    align-items: center;
     border-radius: 5px;
     margin-left: 10px;
     width: 100px;
@@ -134,10 +172,6 @@ input {
 
 .end {
     position: absolute;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
     width: 100%;
     height: 100%;
     background-color: white;
@@ -150,12 +184,13 @@ input {
     width: 70%;
     height: 70px;
     font-size: 40px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
     background-color: rgb(107, 193, 214);
     color: white;
     border-radius: 10px;
+}
+
+.hint {
+    margin-top: 5px;
 }
 
 .pointerEvent {
@@ -169,6 +204,8 @@ h1 {
 h3 {
     margin-top: 10px;
 }
+
+
 
 
 

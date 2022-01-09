@@ -19,24 +19,24 @@ let listOfCeleb = [
   {
   fullName: "Jennifer Lopez",
   alt2: "jennifer lopez",
-  alt3: "JLo",
+  alt3: "Jennifer lopez",
+  alt4: "JLo",
   image: "image1.jpg",
-  clicks: 8,
-  trials: 2
+  hint: "Actor and an artist"
 },{
-  fullName: "Gustaf Skarsgård",
-  alt2: "gustaf skarsgård",
-  alt3: "Gustaf Skarsgard",
+  fullName: "Alexander Skarsgård",
+  alt2: "alexander skarsgård",
+  alt3: "Alexander Skarsgard",
+  alt4: "Alexander skarsgård",
   image: "image2.jpg",
-  clicks: 7,
-  trials: 2
+  hint: "True Blood"
 },{
   fullName: "Lionel Messi",
   alt2: "lionel messi",
   alt3: "Messi",
+  alt4: "Lionel messi",
   image: "image3.jpg",
-  clicks: 7,
-  trials: 2
+  hint: "Soccer player"
 }
 
 ]
@@ -61,6 +61,18 @@ function addContent() {
   picture.src = "./assets/" + listOfCeleb[y].image
   image.appendChild(picture)
 
+  let correct = document.createElement("div")
+  main.appendChild(correct)
+  correct.innerText = "Perfect!"
+  correct.classList.add("none")
+  correct.classList.add("correct")
+
+  let wrong = document.createElement("div")
+  main.appendChild(wrong)
+  wrong.innerText = "Try again!"
+  wrong.classList.add("none")
+  wrong.classList.add("wrong")
+
   let next = document.createElement("div")
   container1.appendChild(next)
   next.innerText = "Next"
@@ -72,6 +84,11 @@ function addContent() {
   restart.innerText = "Good job! That was it :)"
   restart.classList.add("none")
   restart.classList.add("restart")
+
+  let hint = document.createElement("div")
+  main.appendChild(hint)
+  hint.classList.add("none")
+  hint.classList.add("hint")
 
   clickAmount.classList.add("clickAmount")
   main.append(clickAmount)
@@ -135,12 +152,16 @@ function ifCeleb() {
   
     let result = document.getElementsByTagName("input")[0].value
 
-    if(result == listOfCeleb[id].fullName || result == listOfCeleb[id].alt2 || result == listOfCeleb[id].alt3) {
+    if(result == listOfCeleb[id].fullName || result == listOfCeleb[id].alt2 || result == listOfCeleb[id].alt3 || result == listOfCeleb[id].alt4) {
+
+      document.querySelector(".hint").classList.add("none")
+
+      setTimeout(correctAnimation,3000)
+
+      document.querySelector(".correct").classList.remove("none")
 
       puzzle.classList.add("none")
-
-      alert("Congratulations!")
-
+      
       id = Number(id)
 
       y = id + 1
@@ -153,6 +174,8 @@ function ifCeleb() {
       clickAmount.classList.add("none")
       tell.classList.add("none")
 
+      
+
       if(listOfCeleb.length > y) {
 
         let next = document.querySelector(".next")
@@ -163,27 +186,28 @@ function ifCeleb() {
   
         })
       } else {
+
         y = 0
+
         localStorage.setItem('celebId', y);
 
-        let restart = document.querySelector(".restart")
-        restart.classList.remove("none")
-
-        restart.addEventListener("click", () => {
+        document.querySelector(".restart").classList.remove("none")
+        
+        document.querySelector(".restart").addEventListener("click", () => {
           reload();
-          
         })
 
       }
-
 
     } else {
 
       trial = trial - 1
 
       tell.innerText = "You have "+ trial +" attempt(s) left"
+      
+      setTimeout(wrongAnimation,2000)
 
-      alert("WROOONG!")
+      document.querySelector(".wrong").classList.remove("none")
 
       if(trial == 0) {
 
@@ -202,27 +226,39 @@ function ifCeleb() {
         again.addEventListener("click", reload)
         end.appendChild(again)
 
+      } else if(trial == 1) {
+        
+        document.querySelector(".hint").classList.remove("none")
+        document.querySelector(".hint").innerText = "HINT: " + listOfCeleb[id].hint
+
       }
     } 
   })
 }
 
 
- function newCeleb() {
+function correctAnimation() {
+  document.querySelector(".correct").classList.add("none")
+}
 
-  console.log("Kom in i newCeleb")
-  let next = document.querySelector(".next")
+function wrongAnimation() {
+document.querySelector(".wrong").classList.add("none")
+}
+
+
+function newCeleb() {
+
   next.classList.add("none")
   answer.classList.remove("none")
   clickAmount.classList.remove("none")
   tell.classList.remove("none")
-  var y = localStorage.getItem('celebId')
   puzzle.classList.remove("none")
 
+  var y = localStorage.getItem('celebId')
+  
   picture.src = "./assets/" + listOfCeleb[y].image
 
   ifCeleb();
-
 } 
 
 
